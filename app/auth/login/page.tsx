@@ -89,9 +89,9 @@ export default function LoginPage() {
 
     <main className="relative  w-screen h-screen flex items-center justify-center bg-[url('/bgg.png')] bg-cover bg-center bg-no-repeat px-4">
   
-  <div className="w-full max-w-md sm:w-1/2 h-auto bg-white/70 border rounded-2xl shadow-xl border border-transparent flex flex-col justify-center px-6 py-6">
-    <h1 className="text-3xl font-bold text-center text-black mb-4">
-      Nutri<span className="text-indigo-600">Plus</span>🍃
+  <div className="w-full max-w-md sm:w-1/2 h-auto bg-white/20 border border-xl border-black rounded-2xl shadow-xl border  flex flex-col justify-center px-6 py-6">
+    <h1 className="text-3xl font-bold text-center bg-clip-text  mb-4">
+      Nutri<span className="text-indigo-600 ">Plus</span>🍃
     </h1>
     <h3 className="text-xl font-bold text-center text-black mb-6">
       Welcome Back!
@@ -132,7 +132,7 @@ export default function LoginPage() {
       <div className="flex justify-center">
         <button
           disabled={busy}
-          className="w-1/2 rounded-xl bg-indigo-600 hover:bg-indigo-900 text-white font-medium px-4 py-3 transition disabled:opacity-50"
+          className="w-2/5 rounded-xl bg-indigo-600 hover:bg-indigo-900 text-white font-medium px-4 py-3 transition border border-black disabled:opacity-50"
         >
           {busy ? "Please wait..." : "Login"}
         </button>
@@ -147,7 +147,7 @@ export default function LoginPage() {
       <p className="text-center sm:text-right">
         Dont have an account?{" "}
         <a
-          className="underline text-indigo-600 hover:text-blue-500"
+          className="underline text-purple-800  hover:text-blue-500"
           href="/auth/signup"
         >
           Sign in

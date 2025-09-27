@@ -13,13 +13,11 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <Link
               href="/"
-              className="text-xl font-extrabold text-green-500 hover:text-green-400 hover:scale-105 transition text-center"
+              className="text-xl font-extrabold text-green-500 mr-6 hover:text-green-400 hover:scale-105 transition text-center"
             >
-              <span className="font-extrabold text-4xl mr-6 bg-gradient-to-r from-[#8a58ce] to-[#00CAFF] bg-clip-text text-transparent">
+              <span className="font-extrabold text-4xl  bg-gradient-to-r from-[#8a58ce] to-[#00CAFF] bg-clip-text text-transparent">
   +
-</span>
-
-              HealthPlus
+</span>HealthPlus
             </Link>
           </div>
 
@@ -99,7 +97,7 @@ export default function Navbar() {
         </div>
 
         {/* DNA */}
-        <div className="dna hidden mr-12 items-start justify-left md:block max-w-[320px] mt-5 hover:opacity-70">
+        <div className="dna hidden mr-20 items-start justify-left md:block max-w-[320px] mt-5 hover:opacity-70">
           {[...Array(16)].map((_, i) => (
             <div key={i} className="link">
               <div></div>
