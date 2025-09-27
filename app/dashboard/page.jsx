@@ -136,7 +136,6 @@ export default function DashboardPage() {
     {[
       { href: "/water-check", img: "/water.png", label: "Water Check" },
       { href: "/bmi", img: "/bmi.png", label: "BMI Calculator" },
-      { href: "/exercises", img: "/yoga.png", label: "Exercises" },
       { href: "/sleep", img: "/sleep.png", label: "Sleep Tracker" },
       { href: "/sleepcal", img: "/bmi.png", label: "Sleep Calendar" },
     ].map((item, i) => (
