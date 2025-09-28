@@ -170,13 +170,12 @@ export default function NutritionCalendar() {
           )}
           
         </div>
-        {/* Go Back Button */}
+        {/* Back Button */}
         <button
-          onClick={() => router.back()}
-          className="mt-6 px-4 py-2 rounded-lg font-bold"
-          style={{ backgroundColor: "#cdb4db", color: "#000" }}
+          onClick={() => router.push("/dashboard")}
+          className="mt-10 px-4 py-2 bg-[#cdb4db] text-black rounded-lg border hover:bg-[#d8c6e2] transition"
         >
-          🔙 Go Back
+          ⬅ Go Back
         </button>
       </main>
     </>

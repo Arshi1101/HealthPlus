@@ -58,9 +58,12 @@ export default function RecipesPage() {
         transition={{ duration: 0.5 }}
         className="relative z-10 w-full md:w-3/4 lg:w-2/3 bg-white/10 backdrop-blur-xl p-10 rounded-2xl shadow-2xl border"
       >
-        <h1 className="text-4xl font-extrabold mb-6 text-center bg-gradient-to-r from-yellow-300 to-pink-400 bg-clip-text text-transparent">
-          🍲 Explore Recipes
-        </h1>
+        <h1 className="text-4xl font-extrabold mb-6 text-center">
+  <span className="mr-2">🍲</span>
+  <span className="bg-gradient-to-r from-purple-300 to-pink-400 bg-clip-text text-transparent">
+    Explore Recipes
+  </span>
+</h1>
 
         {/* Search & Filters */}
         <div className="flex flex-col gap-4 mb-6">
@@ -71,13 +74,13 @@ export default function RecipesPage() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Enter a dish name (e.g., pasta, biryani)"
-              className="px-4 py-3 w-full rounded-lg text-black shadow-inner focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              className="px-4 py-3 w-full rounded-lg text-black shadow-inner focus:outline-none focus:ring-2 focus:ring-purple-400"
             />
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={fetchRecipes}
-              className="px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg font-semibold shadow-lg"
+              className="px-6 py-3 bg-gradient-to-r from-purple-400 to-pink-500 rounded-lg font-semibold shadow-lg"
             >
               Search
             </motion.button>
@@ -201,7 +204,7 @@ export default function RecipesPage() {
         {/* Back Button */}
         <button
           onClick={() => router.push("/dashboard")}
-          className="mt-10 px-4 py-2 bg-red-600 rounded-lg border hover:bg-red-500 transition"
+          className="mt-10 px-4 py-2 bg-purple-600 rounded-lg border hover:bg-purple-500 transition"
         >
           ⬅ Go Back
         </button>

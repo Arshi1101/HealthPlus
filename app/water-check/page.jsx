@@ -22,12 +22,10 @@ export default function WaterCheckPage() {
   const consumed = glasses * glassSize;
   const percentage = recommended ? Math.min((consumed / recommended) * 100, 100) : 0;
 
-
   useEffect(() => {
     alert("💧 Reminder: Your water tracker resets every midnight!");
   }, []);
 
-  
   useEffect(() => {
     if (!user) return;
 
@@ -47,7 +45,6 @@ export default function WaterCheckPage() {
     fetchData();
   }, [user, today]);
 
-  
   useEffect(() => {
     if (!user || !weight) return;
 
@@ -66,31 +63,41 @@ export default function WaterCheckPage() {
   }, [user, weight, glasses]);
 
   if (!user) {
-    return <p className="text-center text-white mt-20 text-lg">Please log in to track water intake.<br></br>
-    <a
-          className="underline text-indigo-600 hover:text-blue-500"
+    return (
+      <p className="text-center text-white mt-20 text-lg">
+        Please log in to track water intake.
+        <br />
+        <a
+          className="underline text-[#a49dde] hover:text-purple-400"
           href="/auth/login"
         >
           Login
-        </a></p>;
+        </a>
+      </p>
+    );
   }
 
   if (loading) return <p className="text-center mt-20">Loading...</p>;
 
   return (
-    <main className="min-h-screen firstpageanim text-white flex flex-col items-center py-12 px-6">
-      
-      <TopMenuButton /> <h1 className="text-3xl mt-4 hover:text-green-100 font-bold mb-2">
-        💧 Water Intake Tracker
+    <main className="min-h-screen firstpageanim text-white flex flex-col items-center py-12 px-6 bg-black relative overflow-hidden">
+      {/* purple background blobs for consistency */}
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#a49dde] rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute -bottom-20 -right-20 w-[28rem] h-[28rem] bg-[#a49dde] rounded-full blur-3xl opacity-30 animate-pulse"></div>
+
+      <TopMenuButton />
+      <h1 className="text-3xl mt-4 font-bold mb-2 text-center">
+        <span className="mr-2">💧</span>
+        <span className="bg-gradient-to-r from-[#a49dde] to-[#a49dde] bg-clip-text text-transparent">
+          Water Intake Tracker
+        </span>
       </h1>
       <p className="mb-6 text-gray-300">
-        Welcome, {user.email ?? user.displayName}👋
+        Welcome, {user.email ?? user.displayName} 👋
       </p>
 
-      
-
       {/* Input for weight */}
-      <div className="bg-gradient-to-r from-indigo-500 via-blue-500 to-indigo-400 border p-6 rounded-2xl shadow-lg w-full max-w-md">
+      <div className="bg-gradient-to-r from-[#a49dde]/40 via-[#a49dde]/30 to-[#a49dde]/40 border border-[#a49dde]/50 p-6 rounded-2xl shadow-lg w-full max-w-md">
         <label className="block text-lg mb-2">Enter your weight (kg):</label>
         <input
           type="number"
@@ -103,7 +110,7 @@ export default function WaterCheckPage() {
         {weight && (
           <p className="mt-3 text-sm text-white">
             Recommended:{" "}
-            <span className="font-semibold text-blue-300">
+            <span className="font-semibold text-[#a49dde]">
               {(recommended / 1000).toFixed(1)} L
             </span>{" "}
             per day
@@ -113,12 +120,12 @@ export default function WaterCheckPage() {
 
       {/* Progress Tracker */}
       {weight && (
-        <div className="mt-5 w-full max-w-md bg-gradient-to-r from-indigo-400 via-purple-400 to-purple-500 border p-6 rounded-2xl shadow-lg">
+        <div className="mt-5 w-full max-w-md bg-gradient-to-r from-[#a49dde]/30 via-[#a49dde]/20 to-[#a49dde]/30 border border-[#a49dde]/50 p-6 rounded-2xl shadow-lg">
           <h2 className="text-xl font-semibold mb-4">Your Progress</h2>
 
           <div className="w-full bg-gray-700 rounded-full h-4 mb-4">
             <div
-              className="bg-green-400 h-4 rounded-full transition-all duration-300"
+              className="bg-[#a49dde] h-4 rounded-full transition-all duration-300"
               style={{ width: `${percentage}%` }}
             ></div>
           </div>
@@ -130,7 +137,7 @@ export default function WaterCheckPage() {
 
           {/* 🎉 Celebration message */}
           {consumed >= recommended && (
-            <p className="text-green-300 font-bold text-lg mb-4 animate-bounce">
+            <p className="text-[#a49dde] font-bold text-lg mb-4 animate-bounce">
               🎉 Yay! You reached your daily goal!
             </p>
           )}
@@ -138,13 +145,13 @@ export default function WaterCheckPage() {
           <div className="flex gap-4 flex-wrap">
             <button
               onClick={() => setGlasses((g) => g + 1)}
-              className="px-3 py-1 border rounded-lg bg-green-600 border-black hover:bg-green-500 transition"
+              className="px-3 py-1 border rounded-lg bg-[#a49dde] text-white border-black hover:bg-[#726aad] transition"
             >
               + Add Glass
             </button>
             <button
               onClick={() => setGlasses((g) => Math.max(0, g - 1))}
-              className="px-3 py-1 border rounded-lg border-black bg-red-600 hover:bg-red-500 transition"
+              className="px-3 py-1 border rounded-lg border-black bg-red-500 hover:bg-red-400 transition"
             >
               - Remove
             </button>
@@ -155,15 +162,13 @@ export default function WaterCheckPage() {
               Reset
             </button>
           </div>
-          
         </div>
-        
       )}
+
       {/* Go Back Button */}
-      
       <button
         onClick={() => router.push("/dashboard")}
-        className="mb-6 mt-3 px-2 py-1 bg-blue-600 rounded-lg  border hover:bg-red-500 transition"
+        className="mb-6 mt-3 px-4 py-2 bg-[#a49dde] text-white rounded-lg border hover:bg-[#726aad] transition"
       >
         ⬅ Go Back
       </button>
