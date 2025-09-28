@@ -15,7 +15,7 @@ export default function DashboardPage() {
       items: [
         { label: "Food Insights", href: "/calorie" },
         { label: "Nutrition Calendar", href: "/nut" },
-        { label: "Healthy Recipes", href: "/recipes" },
+        { label: "Recipes", href: "/recipes" },
         { label: "HealthBot", href: "/chatbot" },
       ],
     },

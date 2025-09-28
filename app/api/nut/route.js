@@ -45,18 +45,19 @@ export async function GET(req) {
     };
 
     snapshot.forEach(doc => {
-      const data = doc.data();
-      summary.calories += data.calories || 0;
-      summary.protein_g += data.protein || 0;
-      summary.carbohydrates_total_g += data.carbs || 0;
-      summary.fat_total_g += data.fat || 0;
-      summary.sugar_g += data.sugar || 0;
-      summary.fiber_g += data.fiber || 0;
-      summary.cholesterol_mg += data.cholesterol || 0;
-      summary.sodium_mg += data.sodium || 0;
-      summary.potassium_mg += data.potassium || 0;
-      summary.water += data.water || 0;
-    });
+  const data = doc.data();
+  summary.calories += data.calories || 0;
+  summary.protein_g += data.protein_g || 0;
+  summary.carbohydrates_total_g += data.carbohydrates_total_g || 0;
+  summary.fat_total_g += data.fat_total_g || 0;
+  summary.sugar_g += data.sugar_g || 0;
+  summary.fiber_g += data.fiber_g || 0;
+  summary.cholesterol_mg += data.cholesterol_mg || 0;
+  summary.sodium_mg += data.sodium_mg || 0;
+  summary.potassium_mg += data.potassium_mg || 0;
+  summary.water += data.water || 0;
+});
+
 
     return NextResponse.json(summary);
   } catch (err) {

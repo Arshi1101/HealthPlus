@@ -68,7 +68,7 @@ export default function WaterCheckPage() {
         Please log in to track water intake.
         <br />
         <a
-          className="underline text-[#a49dde] hover:text-purple-400"
+          className="underline text-white hover:text-gray-300"
           href="/auth/login"
         >
           Login
@@ -81,24 +81,22 @@ export default function WaterCheckPage() {
 
   return (
     <main className="min-h-screen firstpageanim text-white flex flex-col items-center py-12 px-6 bg-black relative overflow-hidden">
-      {/* purple background blobs for consistency */}
-      <div className="absolute -top-20 -left-20 w-96 h-96 bg-[#a49dde] rounded-full blur-3xl opacity-30 animate-pulse"></div>
-      <div className="absolute -bottom-20 -right-20 w-[28rem] h-[28rem] bg-[#a49dde] rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      {/* background blobs */}
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-blue-700 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute -bottom-20 -right-20 w-[28rem] h-[28rem] bg-blue-800 rounded-full blur-3xl opacity-30 animate-pulse"></div>
 
       <TopMenuButton />
-      <h1 className="text-3xl mt-4 font-bold mb-2 text-center">
+      <h1 className="text-3xl mt-4 font-bold mb-2 text-center text-white">
         <span className="mr-2">💧</span>
-        <span className="bg-gradient-to-r from-[#a49dde] to-[#a49dde] bg-clip-text text-transparent">
-          Water Intake Tracker
-        </span>
+        Water Intake Tracker
       </h1>
       <p className="mb-6 text-gray-300">
         Welcome, {user.email ?? user.displayName} 👋
       </p>
 
       {/* Input for weight */}
-      <div className="bg-gradient-to-r from-[#a49dde]/40 via-[#a49dde]/30 to-[#a49dde]/40 border border-[#a49dde]/50 p-6 rounded-2xl shadow-lg w-full max-w-md">
-        <label className="block text-lg mb-2">Enter your weight (kg):</label>
+      <div className="bg-blue-900/40 border border-white/30 p-6 rounded-2xl shadow-lg w-full max-w-md">
+        <label className="block text-lg mb-2 text-white">Enter your weight (kg):</label>
         <input
           type="number"
           value={weight}
@@ -110,7 +108,7 @@ export default function WaterCheckPage() {
         {weight && (
           <p className="mt-3 text-sm text-white">
             Recommended:{" "}
-            <span className="font-semibold text-[#a49dde]">
+            <span className="font-semibold text-white">
               {(recommended / 1000).toFixed(1)} L
             </span>{" "}
             per day
@@ -120,12 +118,12 @@ export default function WaterCheckPage() {
 
       {/* Progress Tracker */}
       {weight && (
-        <div className="mt-5 w-full max-w-md bg-gradient-to-r from-[#a49dde]/30 via-[#a49dde]/20 to-[#a49dde]/30 border border-[#a49dde]/50 p-6 rounded-2xl shadow-lg">
-          <h2 className="text-xl font-semibold mb-4">Your Progress</h2>
+        <div className="mt-5 w-full max-w-md bg-blue-900/30 border border-white/30 p-6 rounded-2xl shadow-lg">
+          <h2 className="text-xl font-semibold mb-4 text-white">Your Progress</h2>
 
           <div className="w-full bg-gray-700 rounded-full h-4 mb-4">
             <div
-              className="bg-[#a49dde] h-4 rounded-full transition-all duration-300"
+              className="bg-white h-4 rounded-full transition-all duration-300 shadow-md"
               style={{ width: `${percentage}%` }}
             ></div>
           </div>
@@ -137,7 +135,7 @@ export default function WaterCheckPage() {
 
           {/* 🎉 Celebration message */}
           {consumed >= recommended && (
-            <p className="text-[#a49dde] font-bold text-lg mb-4 animate-bounce">
+            <p className="text-white font-bold text-lg mb-4 animate-bounce">
               🎉 Yay! You reached your daily goal!
             </p>
           )}
@@ -145,19 +143,19 @@ export default function WaterCheckPage() {
           <div className="flex gap-4 flex-wrap">
             <button
               onClick={() => setGlasses((g) => g + 1)}
-              className="px-3 py-1 border rounded-lg bg-[#a49dde] text-white border-black hover:bg-[#726aad] transition"
+              className="px-3 py-1 border rounded-lg bg-white text-black hover:bg-gray-200 transition shadow-md"
             >
               + Add Glass
             </button>
             <button
               onClick={() => setGlasses((g) => Math.max(0, g - 1))}
-              className="px-3 py-1 border rounded-lg border-black bg-red-500 hover:bg-red-400 transition"
+              className="px-3 py-1 border rounded-lg bg-red-500 text-white hover:bg-red-400 transition shadow-md"
             >
               - Remove
             </button>
             <button
               onClick={() => setGlasses(0)}
-              className="px-3 py-1 rounded-lg border border-black bg-gray-500 hover:bg-gray-400 transition"
+              className="px-3 py-1 rounded-lg border bg-gray-500 text-white hover:bg-gray-400 transition shadow-md"
             >
               Reset
             </button>
@@ -168,7 +166,7 @@ export default function WaterCheckPage() {
       {/* Go Back Button */}
       <button
         onClick={() => router.push("/dashboard")}
-        className="mb-6 mt-3 px-4 py-2 bg-[#a49dde] text-white rounded-lg border hover:bg-[#726aad] transition"
+        className="mb-6 mt-3 px-4 py-2 bg-white text-black rounded-lg border hover:bg-gray-200 transition shadow-md"
       >
         ⬅ Go Back
       </button>
