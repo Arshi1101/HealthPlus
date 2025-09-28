@@ -118,14 +118,7 @@ export default function Navbar() {
 
         <p className="max-w-3xl text-lg text-white font-bold dark:text-gray-800 leading-relaxed text-center">
           <div className="border-t border-purple mt-5 mb-5"></div>
-          At <span className="text-cyan-500">HealthPlus</span>, we are dedicated
-          to empowering you to take control of your health journey. Our platform
-          offers personalized diet plans, continuous monitoring, and intelligent
-          food recommendations, all designed to help you achieve your wellness
-          goals. Whether a beginner, homemaker, or health enthusiast,
-          HealthPlus offers a seamless, accessible experience for everyone on
-          their wellness journey. Your health is our priority, and we are here
-          to support you every step of the way.
+          At <span className="text-cyan-500">HealthPlus</span>, we are dedicated to create a collaborative health and wellness platform designed to make well-being a shared journey. It brings families, partners, and communities together by sharing meaningful insights, celebrating progress, and inspiring collective motivation for healthier living. Together, we aim to make health not just a personal goal, but a united experience that strengthens connections and inspires lasting well-being.
         </p>
       </section>
 

@@ -13,10 +13,10 @@ export default function DashboardPage() {
       name: "Nutrition & Diet",
       icon: <Apple className="w-8 h-8" />,
       items: [
-        { label: "Food Insights", href: "/food" },
-        { label: "Meal Planner", href: "/nutrition-calendar" },
+        { label: "Food Insights", href: "/calorie" },
+        { label: "Nutrition Calendar", href: "/nut" },
         { label: "Healthy Recipes", href: "/recipes" },
-        { label: "NutriBot", href: "/chatbot" },
+        { label: "HealthBot", href: "/chatbot" },
       ],
     },
     {

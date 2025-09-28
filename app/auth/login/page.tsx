@@ -91,7 +91,7 @@ export default function LoginPage() {
   
   <div className="w-full max-w-md sm:w-1/2 h-auto bg-white/20 border border-xl border-black rounded-2xl shadow-xl border  flex flex-col justify-center px-6 py-6">
     <h1 className="text-3xl font-bold text-center bg-clip-text  mb-4">
-      Nutri<span className="text-indigo-600 ">Plus</span>🍃
+      Health<span className="text-indigo-600 ">Plus</span>🍃
     </h1>
     <h3 className="text-xl font-bold text-center text-black mb-6">
       Welcome Back!

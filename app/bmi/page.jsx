@@ -106,11 +106,11 @@ export default function BMICalculatorPage() {
           </motion.div>
         )}
         <button
-        onClick={() => router.push("/dashboard")}
-        className="mb-1 mt-10 px-2 py-1 bg-red-600 rounded-lg  border hover:bg-red-500 transition"
-      >
-        ⬅ Go Back
-      </button>
+          onClick={() => router.push("/dashboard")}
+          className="mb-1 mt-10 px-2 py-1 bg-purple-600 rounded-lg  border hover:bg-purple-500 transition"
+        >
+          ⬅ Go Back
+        </button>
       </motion.div>
       
     </main>
