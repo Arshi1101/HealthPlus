@@ -19,11 +19,8 @@ export default function TopMenuButton() {
       {/* Menu overlay */}
       {open && (
         <div className="fixed top-16 left-4 z-40 w-50 sm:bg-white/10 bg-white border border-cyan sm:text-white text-black rounded-xl shadow-lg p-4 flex flex-col space-y-3C">
-          <Link href="/" className="hover:text-cyan-300">Home</Link>
-          <Link href="/services" className="hover:text-cyan-300">Services</Link>
           <Link href="/dashboard" className="hover:text-cyan-300">Dashboard</Link>
-          <Link href="/about" className="hover:text-cyan-300">About</Link>
-          <Link href="/contact" className="hover:text-cyan-300">Contact</Link>
+          <Link href="/team-dashboard" className="hover:text-cyan-300">Team Dashboard</Link>
         </div>
       )}
     </>

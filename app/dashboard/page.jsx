@@ -33,7 +33,7 @@ export default function DashboardPage() {
       name: "Mind & Mood",
       icon: <Brain className="w-8 h-8" />,
       items: [
-        { label: "Journaling", href: "/journal" },
+        { label: "Journaling", href: "/diary" },
         { label: "Self-Assessment Tests", href: "/tests" },
       ],
     },

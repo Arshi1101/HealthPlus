@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { db } from "@/lib/firebase";
 import { doc, collection, addDoc, getDocs } from "firebase/firestore";
 import { useAuth } from "@/context/AuthContext";
+import TopMenuButton from "../../components/TopMenuButton";
+import ThemeToggle from "../../components/ThemeToggle";
 
 export default function SleepLogPage() {
   const [bedtime, setBedtime] = useState("");
@@ -73,7 +75,7 @@ export default function SleepLogPage() {
       setLoading(false);
     }
   };
-
+  
   const fetchLogs = async () => {
     if (!user) return;
     let past7days = [];
@@ -133,6 +135,11 @@ export default function SleepLogPage() {
 
   return (
     <main className="min-h-screen flex flex-col items-center p-6 bg-gradient-to-tr from-black via-gray-900 to-gray-800 text-white">
+      <TopMenuButton /> 
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-purple-700 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute -bottom-20 -right-20 w-[28rem] h-[28rem] bg-indigo-700 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute  -bottom-1 -left-22 w-40 h-40 bg-indigo-700 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+
       <h1 className="text-4xl font-bold text-purple-200 mb-6">😴 Sleep Tracker</h1>
 
       {/* Log Form */}
